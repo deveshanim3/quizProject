@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizProject</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="nav1" id="nav1">
+            Quiz
+        </div>
+    </header>
+    <main>
+        <div class="qsn" id="qsn"></div>
+    </main>
+    <div class="box0" id="box">
+        <div class="box"><button class="button" id="a" onclick="selectAnswer(0)">a</button></div>
+        <div class="box"><button class="button" id="b" onclick="selectAnswer(1)">b</button></div>
+        <div class="box"><button class="button" id="c" onclick="selectAnswer(2)">c</button></div>
+        <div class="box"><button class="button" id="d" onclick="selectAnswer(3)">d</button></div>
+    </div>
+    <div class="next">
+        <button class='nextBtn' id='next' onclick="nextQuestion()">Next Question</button>
+    </div>
+    <!-- Final result div -->
+    <div id="result" class="res">
+        <p id="final-score"></p>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="index.js"></script>
+    
+</body>
+</html>
