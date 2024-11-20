@@ -1,5 +1,5 @@
-// Questions array
-let questions = [
+ // Questions array
+ let questions = [
     {"question": "1: What is the capital of Argentina?", "option": ["Buenos Aires", "Bogota", "Lima", "Santiago"], "answer": 0},
     {"question": "2: What is the capital of Australia?", "option": ["Sydney", "Melbourne", "Brisbane", "Canberra"], "answer": 3},
     {"question": "3: What is the capital of Brazil?", "option": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Belo Hor"], "answer": 2},
@@ -73,13 +73,36 @@ function nextQuestion() {
 function showResults() {
     document.getElementById('box').style.display = 'none';  // Hide the quiz options
     document.getElementById('next').style.display = 'none'; // Hide the next button
-    document.getElementById('qsn').style.display = 'none'; // Hide the question
+    document.getElementById('qsn').style.display = 'none';  // Hide the question
 
     const finalScoreEl = document.getElementById('final-score');
     finalScoreEl.textContent = `Your score: ${score} / ${questions.length}`;
 
-    document.getElementById('result').style.display = 'block';  // Show the score
+    document.getElementById('result').style.display = 'block'; // Show the results
+    document.getElementById('restartButton').style.display = 'block'; // Show the restart button
 }
 
+
 // Start the quiz by loading the first question
+
+function resetQuiz() {
+    // Reset quiz state
+    score = 0;
+    currentQuestionIndex = 0;
+
+    // Reset visibility and content
+    document.getElementById('result').style.display = 'none'; // Hide the result section
+    document.getElementById('box').style.display = 'block';   // Show the quiz options
+    document.getElementById('next').style.display = 'block';  // Show the next button
+    document.getElementById('qsn').style.display = 'block';   // Show the question
+
+    // Reset buttons' appearance
+    document.querySelectorAll('.button').forEach(button => {
+        button.style.backgroundColor = ''; // Reset background color
+    });
+
+    // Load the first question
+    loadQuestion();
+}
+
 loadQuestion();

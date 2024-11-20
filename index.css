@@ -1,108 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: rgba(90, 23, 199, 0.555);
-    
+    background: linear-gradient(135deg, #5a17c7, #8b50db);
+    color: #fff;
+    font-size: 16px;
 }
-.nav1{
+
+header {
     width: 100%;
-    height: 10dvh;
-    background-color:rgba(92, 10, 224, 0.555);
-    text-align: center;
+    height: 10vh;
+    background: linear-gradient(135deg, #5a17c7, #8b50db);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    font-weight: 900;
-    margin-top: 3px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #ddd;
 }
 
-.qsn{
-    width:80%;
-    height: 30dvh;
-    margin-left: 10%;
-    margin-top: 2.5%;
-    background-color: rebeccapurple;
-    border-radius: 10px 30px;
-    font-size: 30px;
+.qsn {
+    width: 80%;
+    margin: 2.5% auto;
+    padding: 20px;
     text-align: center;
-    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.box0{
+.box0 {
     display: grid;
-    width:80%;
-    height: 37dvh;
-    margin-left: 10%;
-    margin-top: 2.5%;
-    border-radius: 10px 30px;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 25px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 2.5% auto;
 }
 
-.box{
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.button{
-    width: 100%;  /* Button takes full width of the parent div */
-    height: 100%; 
-    border-radius: 10px;
-    font-size: 30px;
-    transition-timing-function: 1s;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+
+.button {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    background: #6a1b9a;
+    color: #fff;
     border: none;
-    
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
-button:hover{
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 0 10px rgb(255, 255, 255);
-    transform: scale(1.03);
-    border-radius:10px 30px;
-    outline:none
+
+.button:hover {
+    background: #8e24aa;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus {
+    outline: none;
+    background: #ab47bc;
+    color: #fff;
 }
 
 .next {
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    margin-top: 15px;
-    height: 55px;
+    margin: 15px auto;
     width: 250px;
-    margin-left: 40.5%;
-    border-radius: 10px;
+    text-align: center;
 }
 
 .nextBtn {
-    width: 100%;  
-    height: 100%; 
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background: #283593;
+    color: #fff;
+    border: none;
     border-radius: 10px;
-    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nextBtn:hover {
+    background: #3949ab;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restartButton {
+    
+    margin: 15px auto;
+    width: 250px;
+    text-align: center;
+}
+
+#restartButton {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background: #c62828;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#restartButton:hover {
+    background: #e53935;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.res {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
     font-weight: 500;
-    border:none;
-    transition-timing-function: 1s;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-radius 0.3s ease, font-weight 0.3s ease;
-    
+    color: #fff;
 }
-.nextBtn:hover{
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 0 10px rgb(255, 255, 255);
-    transform: scale(1.03);
-    border-radius:10px 30px;
-    outline:none;
-    font-weight: 600;
-    
-
-}
-.res{
-    font-size: 30px;
-    margin-left: 3%;
-}
-
-
-
