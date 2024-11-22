@@ -1,4 +1,4 @@
- // Questions array
+
  let questions = [
     {"question": "1: What is the capital of Argentina?", "option": ["Buenos Aires", "Bogota", "Lima", "Santiago"], "answer": 0},
     {"question": "2: What is the capital of Australia?", "option": ["Sydney", "Melbourne", "Brisbane", "Canberra"], "answer": 3},
@@ -10,99 +10,75 @@
     {"question": "8: What is the capital of India?", "option": ["Mumbai", "Delhi", "Bangalore", "Chennai"], "answer": 1},
     {"question": "9: What is the capital of Italy?", "option": ["Rome", "Milan", "Naples", "Turin"], "answer": 0},
     {"question": "10: What is the capital of Japan?", "option": ["Tokyo", "Osaka", "Nagoya", "Shibuya"], "answer": 0}
-];
+]
 
-// Variables to track the current question and score
-let currentQuestionIndex = 0;
-let score = 0;
-let selectedAnswer = null;
+let currentQuestionIndex = 0
+let score = 0
+let selectedAnswer = null
 
-// Function to load the current question
+// Load Function
 function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
-
-    // Set the question text
-    document.getElementById('qsn').textContent = currentQuestion.question;
-
-    // Set the options text
-    document.getElementById('a').textContent = currentQuestion.option[0];
-    document.getElementById('b').textContent = currentQuestion.option[1];
-    document.getElementById('c').textContent = currentQuestion.option[2];
-    document.getElementById('d').textContent = currentQuestion.option[3];
-
-    // Reset answer selection
+    document.getElementById('qsn').textContent = currentQuestion.question
+    document.getElementById('a').textContent = currentQuestion.option[0]
+    document.getElementById('b').textContent = currentQuestion.option[1]
+    document.getElementById('c').textContent = currentQuestion.option[2]
+    document.getElementById('d').textContent = currentQuestion.option[3]
     selectedAnswer = null;
     document.querySelectorAll('.button').forEach(button => {
-        button.style.backgroundColor = '';  // Reset background
-    });
+        button.style.backgroundColor = ''
+    })
 }
 
-// Function to handle selecting an answer
+// selection function
 function selectAnswer(optionIndex) {
     selectedAnswer = optionIndex;
-
-    // Highlight selected answer (optional)
     document.querySelectorAll('.button').forEach((button, index) => {
         button.style.backgroundColor = index === optionIndex ? 'lightgreen' : '';
-    });
+    })
 }
 
-// Function to move to the next question
+// move to next qsn fxn
 function nextQuestion() {
     if (selectedAnswer === null) {
-        alert("Please select an answer!");
-        return;
+        alert("Please select an answer!")
+        return
     }
-
-    // Check if the selected answer is correct
     if (selectedAnswer === questions[currentQuestionIndex].answer) {
-        score++;
+        score++
     }
-
-    // Move to the next question
-    currentQuestionIndex++;
-
+    currentQuestionIndex++
     if (currentQuestionIndex < questions.length) {
-        loadQuestion(); // Load the next question
+        loadQuestion()
     } else {
-        showResults(); // Show final results
+        showResults()
     }
 }
 
 // Function to show results
 function showResults() {
-    document.getElementById('box').style.display = 'none';  // Hide the quiz options
-    document.getElementById('next').style.display = 'none'; // Hide the next button
-    document.getElementById('qsn').style.display = 'none';  // Hide the question
+    document.getElementById('box').style.display = 'none'
+    document.getElementById('next').style.display = 'none'
+    document.getElementById('qsn').style.display = 'none'
 
-    const finalScoreEl = document.getElementById('final-score');
-    finalScoreEl.textContent = `Your score: ${score} / ${questions.length}`;
-
-    document.getElementById('result').style.display = 'block'; // Show the results
-    document.getElementById('restartButton').style.display = 'block'; // Show the restart button
+    const finalScoreEl = document.getElementById('final-score')
+    finalScoreEl.textContent = `Your score: ${score} / ${questions.length}`
+    document.getElementById('result').style.display = 'block'
+    document.getElementById('restartButton').style.display = 'block'
 }
-
-
-// Start the quiz by loading the first question
-
+//reset quiz
 function resetQuiz() {
-    // Reset quiz state
-    score = 0;
-    currentQuestionIndex = 0;
-
-    // Reset visibility and content
-    document.getElementById('result').style.display = 'none'; // Hide the result section
-    document.getElementById('box').style.display = 'block';   // Show the quiz options
-    document.getElementById('next').style.display = 'block';  // Show the next button
-    document.getElementById('qsn').style.display = 'block';   // Show the question
-
-    // Reset buttons' appearance
+    
+    score = 0
+    currentQuestionIndex = 0
+    document.getElementById('result').style.display = 'none'
+    document.getElementById('next').style.display = 'block'
+    document.getElementById('qsn').style.display = 'block'
     document.querySelectorAll('.button').forEach(button => {
-        button.style.backgroundColor = ''; // Reset background color
-    });
-
-    // Load the first question
-    loadQuestion();
+        button.style.backgroundColor = ''
+    })
+    loadQuestion()
 }
 
-loadQuestion();
+//Main program starts
+loadQuestion()
