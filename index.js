@@ -72,6 +72,7 @@ function resetQuiz() {
     score = 0
     currentQuestionIndex = 0
     document.getElementById('result').style.display = 'none'
+    document.getElementById('box').style.display = 'block'
     document.getElementById('next').style.display = 'block'
     document.getElementById('qsn').style.display = 'block'
     document.querySelectorAll('.button').forEach(button => {
